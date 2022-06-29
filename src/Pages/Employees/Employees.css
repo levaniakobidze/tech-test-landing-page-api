@@ -1,0 +1,13 @@
+.employees {
+  width: 100%;
+  background-color: var(--main-white);
+  margin-top: 60px;
+  margin-bottom: 2px;
+}
+
+.employees-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px 0;
+}

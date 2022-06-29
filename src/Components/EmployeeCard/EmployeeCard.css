@@ -1,0 +1,6 @@
+.employee-card {
+  width: 400px;
+  height: 350px;
+  background-color: var(--main-dark-red);
+  margin: 10px 10px;
+}
