@@ -1,6 +1,68 @@
 .employee-card {
-  width: 400px;
-  height: 350px;
-  background-color: var(--main-dark-red);
-  margin: 10px 10px;
+  width: 380px;
+  height: 380px;
+  background-color: var(--main-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 2px 0 #ccc;
+  transition: all 0.5s;
+  margin: 10px;
+}
+
+.employee-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 25px -5px #ccc;
+  z-index: 12;
+}
+.employee-card:hover > .card-image-cont {
+  background-color: aliceblue;
+}
+
+.employee-card:hover > .card-likes {
+  opacity: 1;
+}
+.employee-card:hover > .card-employee-name {
+  margin-top: 60px;
+}
+.card-image-cont {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: all 0.5s;
+}
+.card-image-cont img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  position: absolute;
+  top: 20%;
+  transition: all 0.5s;
+}
+.card-employee-name {
+  margin-top: 80px;
+  color: rgb(43, 43, 43);
+  transition: all 0.5s;
+}
+.card-employee-description {
+  color: rgb(167, 167, 167);
+}
+.card-likes {
+  width: 150px;
+  background-color: #463632;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  opacity: 0;
+  transition: all 0.5s;
+  margin-top: 20px;
+  letter-spacing: 3px;
+}
+.card-likes p {
+  font-size: 16px;
 }

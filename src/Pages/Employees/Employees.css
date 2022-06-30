@@ -1,6 +1,6 @@
 .employees {
+  background-color: aliceblue;
   width: 100%;
-  background-color: var(--main-white);
   margin-top: 60px;
   margin-bottom: 2px;
 }
@@ -8,6 +8,22 @@
 .employees-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   padding: 20px 0;
+}
+.employees-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  color: #463632;
+}
+.employees-text {
+  margin: 5px auto;
+  color: #463632;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-weight: 400;
 }

@@ -22,6 +22,14 @@ function Employees() {
 
   return (
     <div className='employees'>
+      <div className='texts-cont'>
+        <h1 className='employees-title'>Our employees</h1>
+
+        <p className='employees-text'>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
+          similique ab eaque numquam ratione.
+        </p>
+      </div>
       <Container className='employees-container'>
         {data &&
           data.map((employee) => {

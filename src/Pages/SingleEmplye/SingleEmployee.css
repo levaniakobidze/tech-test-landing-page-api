@@ -1,6 +1,51 @@
 .single-employee {
   width: 100%;
   height: 100vh;
-  background-color: blue;
-  margin-top: 60px;
+  background-color: aliceblue;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.single-left-cont {
+  max-width: 500px;
+  height: 100vh;
+  padding: 20px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.single-left-cont img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  margin-top: 30px;
+  box-shadow: 2px 0px 10px 5px #94c4cd;
+  border-radius: 20px;
+}
+.single-center-cont {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  padding: 70px 0;
+}
+.single-right-cont {
+  width: 450px;
+  position: relative;
+}
+.man-icon-cont {
+  width: Z00px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.man-icon-cont img {
+  width: 100%;
+}
+.single-employee-name {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  padding-top: 30px;
 }

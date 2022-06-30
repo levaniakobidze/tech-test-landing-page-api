@@ -7,7 +7,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  box-shadow: 0px 0px 10px 0.001px black;
+  box-shadow: 0px 0px 10px 1px #94c4cd;
+  z-index: 100000000;
 }
 .nav-container {
   display: flex;
@@ -16,10 +17,11 @@
   width: 100%;
 }
 .logo {
-  color: var(--main-dark-red);
+  color: #463632;
   display: flex;
   align-items: center;
-  font-size: 20px;
+  font-size: 23px;
+  font-weight: 600;
 }
 .nav-menu {
   display: flex;
@@ -31,5 +33,7 @@
 }
 .nav-menu a {
   text-decoration: none;
-  color: var(--main-dark-red);
+  color: #463632;
+  font-size: 20px;
+  font-weight: 600;
 }

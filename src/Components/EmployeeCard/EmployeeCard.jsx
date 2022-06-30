@@ -7,22 +7,26 @@ function EmployeeCard(props) {
   const dispatch = useDispatch();
   const { id, name, likes, avatar, job_id, location_id, description } = props;
 
+  console.log(avatar.substr(9, 10));
+
   const handleClick = () => {
     dispatch(mainActions.changeID(id));
   };
   return (
     <Link
-      to={{
-        pathname: `/singleEmployee/${id}`,
-        state: {
-          id: id,
-        },
-      }}
+      to={`/singleEmployee/${id}`}
       t
       className='employee-card'
       onClick={handleClick}>
-      <h1>{name}</h1> <p>{description}</p>
-      <img src={`../..${avatar}`} alt='' />
+      <div className='card-image-cont'>
+        <img src={require(`../../uploads/${avatar.substr(9, 10)}`)} alt='' />
+      </div>
+      <h1 className='card-employee-name'>{name}</h1>
+      <p className='card-employee-description'>{description}</p>
+      <div className='card-likes'>
+        {" "}
+        <p>{likes}</p> LIKES
+      </div>
     </Link>
   );
 }
