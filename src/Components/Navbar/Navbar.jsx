@@ -15,6 +15,9 @@ function Navbar() {
           <li>
             <Link to='/employees'> Empolyees </Link>
           </li>
+          <li>
+            <Link to='/feedback'> Feedback </Link>
+          </li>
         </ul>
       </Container>
     </nav>

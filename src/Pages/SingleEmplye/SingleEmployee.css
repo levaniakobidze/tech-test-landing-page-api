@@ -49,3 +49,23 @@
   justify-content: left;
   padding-top: 30px;
 }
+.single-employee-position {
+  color: gray;
+  margin-bottom: 20px;
+}
+.single-employee-text {
+}
+.single-employee-likes {
+  margin: 25px 0;
+}
+.single-employee-like-btn {
+  margin: 10px 0;
+  border: 0;
+  outline: 0;
+  background-color: #13263f;
+  cursor: pointer;
+  width: 120px;
+  height: 40px;
+  color: #fff;
+  font-size: 20px;
+}

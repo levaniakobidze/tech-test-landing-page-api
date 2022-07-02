@@ -4,3 +4,30 @@
   height: 205px;
   box-shadow: 0px 0px 10px 0.001px #94c4cd;
 }
+.footer-cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-support-img-cont {
+  width: 150px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-support-img-cont img {
+  width: 100%;
+}
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+}
+.footer a {
+  color: #6cb3c0;
+  transition: all 0.3s;
+}
+.footer a:hover {
+  color: #463632;
+}

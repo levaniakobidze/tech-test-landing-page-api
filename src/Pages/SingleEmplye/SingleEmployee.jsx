@@ -10,6 +10,8 @@ function SingleEmployee() {
     "https://www.easytutoriel.com/wp-content/uploads/2021/09/fond-d-ecran-anime-windows-11-10-tutoriel-facile.jpg"
   );
   const [singleEmployee, setSingleEmployee] = useState("");
+  const [like, setLike] = useState(0);
+  const [likeActive, setLikeActive] = useState(false);
   const dispatch = useDispatch();
   const { ID } = useParams();
 
@@ -18,13 +20,24 @@ function SingleEmployee() {
     const response = await fetch(URL);
     const data = await response.json();
     setSingleEmployee(data);
+    setLike(data.liked);
   };
 
   useEffect(() => {
     fetchSingleEmployee();
   }, []);
 
-  const { avatar, name, location, liked } = singleEmployee;
+  const likeF = () => {
+    setLikeActive(() => !likeActive);
+    if (!likeActive) {
+      setLike(() => like + 1);
+    } else {
+      setLike(() => like - 1);
+    }
+  };
+  console.log(likeActive);
+
+  const { avatar, name, location, description } = singleEmployee;
   const imageName = avatar && avatar.substr(9, 10);
 
   return (
@@ -36,6 +49,15 @@ function SingleEmployee() {
       )}
       <div className='single-center-cont'>
         <h1 className='single-employee-name'>{name}</h1>
+        <p className='single-employee-position'>{description}</p>
+        <div className='single-employee-text'>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae iste
+          quis molestiae voluptas officiis itaque nostrum voluptate mollitia.
+        </div>
+        <span className='single-employee-likes'>{like}</span>
+        <button className='single-employee-like-btn' onClick={likeF}>
+          {likeActive ? "Unlike" : "Like"}
+        </button>
       </div>
       <div className='single-right-cont'>
         <div className='man-icon-cont'>

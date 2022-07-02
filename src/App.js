@@ -15,6 +15,7 @@ function App() {
         <Route path={"/"} element={<Main />} />
         <Route path={"/employees"} element={<Employees />} />
         <Route path={"/singleEmployee/:ID"} element={<SingleEmployee />} />
+        <Route path={"/feedback"} element={<Feedback />} />
       </Routes>
       <Footer />
     </React.Fragment>
