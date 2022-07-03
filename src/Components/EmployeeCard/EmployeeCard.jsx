@@ -7,8 +7,6 @@ function EmployeeCard(props) {
   const dispatch = useDispatch();
   const { id, name, likes, avatar, job_id, location_id, description } = props;
 
-  console.log(avatar.substr(9, 10));
-
   const handleClick = () => {
     dispatch(mainActions.changeID(id));
   };

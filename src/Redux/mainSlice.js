@@ -1,9 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  data: [],
-  singleEmployee: [],
-  employee_id: 0,
+  fetchedData: [],
+  filteredData: [],
 };
 
 const mainSlice = createSlice({
@@ -11,14 +10,11 @@ const mainSlice = createSlice({
   initialState,
 
   reducers: {
-    saveData(state, action) {
-      state.data = action.payload;
+    saveFetchedData(state, action) {
+      state.fetchedData = action.payload;
     },
-    saveSingleEmployee(state, action) {
-      state.saveSingleEmployee = action.payload;
-    },
-    changeID(state, action) {
-      state.employee_id = action.payload;
+    filterData(state, action) {
+      state.filteredData = action.payload;
     },
   },
 });

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Container from "../../Components/Container/Container";
 import EmployeeCard from "../../Components/EmployeeCard/EmployeeCard";
@@ -6,19 +6,33 @@ import { mainActions } from "../../Redux/Store";
 import "./Employees.css";
 
 function Employees() {
-  const data = useSelector((state) => state.data);
+  const fetchedData = useSelector((state) => state.fetchedData);
+  const filteredData = useSelector((state) => state.filteredData);
+
   const dispatch = useDispatch();
+  const selectRef = useRef();
 
   const URL = "https://test-task-api-optimo.herokuapp.com/employee";
   const fetchEmployees = async () => {
     const response = await fetch(URL);
     const data = await response.json();
-    dispatch(mainActions.saveData(data));
+    dispatch(mainActions.saveFetchedData(data));
+    dispatch(mainActions.filterData(data));
+    console.log(fetchedData);
   };
 
   useEffect(() => {
     fetchEmployees();
   }, []);
+
+  const filterJobHandler = (value) => {
+    if (value === "All") {
+      dispatch(mainActions.filterData(fetchedData));
+      return;
+    }
+    const filtered = fetchedData.filter((user) => user.description === value);
+    dispatch(mainActions.filterData(filtered));
+  };
 
   return (
     <div className='employees'>
@@ -30,9 +44,22 @@ function Employees() {
           similique ab eaque numquam ratione.
         </p>
       </div>
+
+      <div className='filters'>
+        <select
+          name='cars'
+          id='cars'
+          ref={selectRef}
+          onClick={() => filterJobHandler(selectRef.current.value)}>
+          <option value='All'>All</option>
+          <option value='Backend developer'>Backend developer</option>
+          <option value='Frontend developer'>Frontend developer</option>
+          <option value='Architect'>Architect</option>
+        </select>
+      </div>
       <Container className='employees-container'>
-        {data &&
-          data.map((employee) => {
+        {fetchedData &&
+          filteredData.map((employee) => {
             return (
               <EmployeeCard
                 key={employee.id}
