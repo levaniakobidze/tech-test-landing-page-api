@@ -56,7 +56,7 @@ function SingleEmployee() {
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae iste
             quis molestiae voluptas officiis itaque nostrum voluptate mollitia.
           </div>
-          <span className='single-employee-likes'>{like}</span>
+          <span className='single-employee-likes'>Likes: {like}</span>
           <button className='single-employee-like-btn' onClick={likeF}>
             {likeActive ? "Unlike" : "Like"}
           </button>

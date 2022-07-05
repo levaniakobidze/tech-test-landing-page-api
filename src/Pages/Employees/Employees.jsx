@@ -12,6 +12,8 @@ function Employees() {
 
   const dispatch = useDispatch();
   const selectRef = useRef();
+  const sortRef = useRef();
+
   const URL = "https://test-task-api-optimo.herokuapp.com/employee";
 
   ///////////////////////////////////////////////////////////////
@@ -38,12 +40,33 @@ function Employees() {
     const filtered = fetchedData.filter((user) => user.description === value);
     dispatch(mainActions.filterData(filtered));
   };
+  /////////////////////////////////
+
+  const sortLikes = (value) => {
+    if (value === "decreasing") {
+      const sorted = initialData.slice().sort((a, b) => {
+        return b.liked - a.liked;
+      });
+      dispatch(mainActions.filterData(sorted));
+    }
+    if (value === "increasing") {
+      const sorted = initialData.slice().sort((a, b) => {
+        return a.liked - b.liked;
+      });
+      dispatch(mainActions.filterData(sorted));
+    }
+    if (value === "All") {
+      dispatch(mainActions.filterData(initialData));
+    }
+  };
 
   ////////////////////////////
   return (
     <div className='employees'>
       <div className='texts-cont'>
-        <h1 className='employees-title'>Our employees</h1>
+        <h1 className='employees-title' onClick={sortLikes}>
+          Our employees
+        </h1>
 
         <p className='employees-text'>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
@@ -53,6 +76,18 @@ function Employees() {
 
       <Container className='employees-container'>
         <div className='filters'>
+          <div className='sort'>
+            <label htmlFor='likes'></label>
+            <select
+              name='likes'
+              id='likes'
+              ref={sortRef}
+              onClick={() => sortLikes(sortRef.current.value)}>
+              <option value='All'>All</option>
+              <option value='decreasing'>Decreasing Likes</option>
+              <option value='increasing'>Increasing Likes</option>
+            </select>
+          </div>
           <select
             name='position'
             id='porition'

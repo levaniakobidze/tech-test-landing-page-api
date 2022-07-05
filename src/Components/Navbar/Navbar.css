@@ -37,9 +37,33 @@
   font-size: 20px;
   font-weight: 600;
 }
+.burger-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  display: none;
+}
 
-@media screen and (max-width: 477px) {
+@media screen and (max-width: 677px) {
   .nav-menu {
-    display: none;
+    width: 100%;
+    height: 100vh;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 10%;
+    right: 100%;
+    transition: all 0.2s;
+  }
+  .nav-menu-active {
+    right: 0;
+  }
+  .nav-menu li {
+    margin-top: 20px;
+  }
+  .burger-menu {
+    display: flex;
   }
 }

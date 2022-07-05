@@ -14,6 +14,9 @@ function Footer() {
           <a href='#'> Home</a>
           <a href='#'> Home</a>
           <a href='#'> Home</a>
+        </div>
+        <div className='footer-links'>
+          <a href='#'> Home</a>
           <a href='#'> Home</a>
           <a href='#'> Home</a>
           <a href='#'> Home</a>
@@ -23,23 +26,8 @@ function Footer() {
           <a href='#'> Home</a>
           <a href='#'> Home</a>
           <a href='#'> Home</a>
-          <a href='#'> Home</a>
-          <a href='#'> Home</a>
-          <a href='#'> Home</a>
         </div>
         <div className='footer-links'>
-          <a href='#'> Home</a>
-          <a href='#'> Home</a>
-          <a href='#'> Home</a>
-          <a href='#'> Home</a>
-          <a href='#'> Home</a>
-          <a href='#'> Home</a>
-          <a href='#'> Home</a>
-        </div>
-        <div className='footer-links'>
-          <a href='#'> Home</a>
-          <a href='#'> Home</a>
-          <a href='#'> Home</a>
           <a href='#'> Home</a>
           <a href='#'> Home</a>
           <a href='#'> Home</a>
@@ -47,9 +35,6 @@ function Footer() {
         </div>
 
         <div className='footer-links'>
-          <a href='#'> Home</a>
-          <a href='#'> Home</a>
-          <a href='#'> Home</a>
           <a href='#'> Home</a>
           <a href='#'> Home</a>
           <a href='#'> Home</a>
