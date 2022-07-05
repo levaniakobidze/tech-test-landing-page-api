@@ -7,24 +7,29 @@ import "./Employees.css";
 
 function Employees() {
   const fetchedData = useSelector((state) => state.fetchedData);
-  const filteredData = useSelector((state) => state.filteredData);
+  const initialData = useSelector((state) => state.initialData);
+  const loading = useSelector((state) => state.isEmployeesLoading);
 
   const dispatch = useDispatch();
   const selectRef = useRef();
-
   const URL = "https://test-task-api-optimo.herokuapp.com/employee";
+
+  ///////////////////////////////////////////////////////////////
   const fetchEmployees = async () => {
+    dispatch(mainActions.setEmployeesLoading(true));
     const response = await fetch(URL);
     const data = await response.json();
     dispatch(mainActions.saveFetchedData(data));
     dispatch(mainActions.filterData(data));
-    console.log(fetchedData);
+    dispatch(mainActions.setEmployeesLoading(false));
   };
 
+  /////////////////
   useEffect(() => {
     fetchEmployees();
   }, []);
 
+  ///////////////////////////////////////
   const filterJobHandler = (value) => {
     if (value === "All") {
       dispatch(mainActions.filterData(fetchedData));
@@ -34,6 +39,7 @@ function Employees() {
     dispatch(mainActions.filterData(filtered));
   };
 
+  ////////////////////////////
   return (
     <div className='employees'>
       <div className='texts-cont'>
@@ -45,34 +51,44 @@ function Employees() {
         </p>
       </div>
 
-      <div className='filters'>
-        <select
-          name='cars'
-          id='cars'
-          ref={selectRef}
-          onClick={() => filterJobHandler(selectRef.current.value)}>
-          <option value='All'>All</option>
-          <option value='Backend developer'>Backend developer</option>
-          <option value='Frontend developer'>Frontend developer</option>
-          <option value='Architect'>Architect</option>
-        </select>
-      </div>
       <Container className='employees-container'>
-        {fetchedData &&
-          filteredData.map((employee) => {
-            return (
-              <EmployeeCard
-                key={employee.id}
-                id={employee.id}
-                name={employee.name}
-                likes={employee.liked}
-                avatar={employee.avatar}
-                job_id={employee.job_id}
-                location_id={employee.location_id}
-                description={employee.description}
-              />
-            );
-          })}
+        <div className='filters'>
+          <select
+            name='position'
+            id='porition'
+            ref={selectRef}
+            onClick={() => filterJobHandler(selectRef.current.value)}>
+            <option value='All'>All</option>
+            <option value='Backend developer'>Backend developer</option>
+            <option value='Frontend developer'>Frontend developer</option>
+            <option value='Architect'>Architect</option>
+          </select>
+        </div>
+        <div className='loading'>
+          {loading && (
+            <span className='loading-sircle'>
+              <span className='loading-stick'></span>
+            </span>
+          )}
+        </div>
+
+        <div className='employee-cards'>
+          {fetchedData &&
+            initialData.map((employee) => {
+              return (
+                <EmployeeCard
+                  key={employee.id}
+                  id={employee.id}
+                  name={employee.name}
+                  likes={employee.liked}
+                  avatar={employee.avatar}
+                  job_id={employee.job_id}
+                  location_id={employee.location_id}
+                  description={employee.description}
+                />
+              );
+            })}
+        </div>
       </Container>
     </div>
   );

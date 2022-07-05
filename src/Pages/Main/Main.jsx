@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../../Components/Button/Button";
+import { Link } from "react-router-dom";
 import Container from "../../Components/Container/Container";
 import "./Main.css";
 import Logo from "../../Assets/Logo.svg";
@@ -16,7 +17,9 @@ function Main() {
             repellat, quam soluta ipsa. Quaerat non maxime blanditiis possimus
             laudantium ut nesciunt.
           </p>
-          <button className='left-btn'>Employees</button>
+          <Link to={"/employees"} className='left-btn'>
+            Employees
+          </Link>
         </div>
         <div className='right-cont'>
           <img src={require("../../Assets/Logo2.png")} alt='' />

@@ -23,7 +23,7 @@ function EmployeeCard(props) {
       <p className='card-employee-description'>{description}</p>
       <div className='card-likes'>
         {" "}
-        <p>{likes}</p> LIKES
+        <p>{likes}</p> LIKE
       </div>
     </Link>
   );

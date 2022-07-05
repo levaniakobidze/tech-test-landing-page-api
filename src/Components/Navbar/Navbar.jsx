@@ -7,7 +7,9 @@ function Navbar() {
   return (
     <nav className='main-navbar'>
       <Container className='nav-container'>
-        <div className='logo'>Chloro</div>
+        <Link to={"/"} className='logo'>
+          Chloro
+        </Link>
         <ul className='nav-menu'>
           <li>
             <Link to='/'> Home </Link>

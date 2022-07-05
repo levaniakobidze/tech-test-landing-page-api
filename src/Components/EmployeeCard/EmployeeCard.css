@@ -1,6 +1,6 @@
 .employee-card {
   width: 380px;
-  height: 380px;
+  height: 395px;
   background-color: var(--main-white);
   display: flex;
   flex-direction: column;
@@ -58,10 +58,12 @@
   justify-content: center;
   align-items: center;
   color: rgb(255, 255, 255);
-  opacity: 0;
+  opacity: 1;
   transition: all 0.5s;
   margin-top: 20px;
   letter-spacing: 3px;
+  padding: 5px 0;
+  box-sizing: border-box;
 }
 .card-likes p {
   font-size: 16px;

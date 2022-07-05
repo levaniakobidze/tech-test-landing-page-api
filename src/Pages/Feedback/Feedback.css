@@ -29,13 +29,24 @@
   width: 100%;
   justify-content: space-between;
   padding: 0 10px;
-
   margin-top: 10px;
+}
+.name-cont,
+.email-cont {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+}
+.name-not-valid,
+.email-not-valid {
+  height: 30px;
+  color: red;
+  font-style: italic;
+  font-size: 15px;
 }
 
 .name-input,
 .email-input {
-  flex: 0.49;
   height: 35px;
   border: 0;
   outline: 0;
@@ -58,6 +69,7 @@
   align-items: top;
   border: 0;
   outline: 0;
+  transition: all 0.3s;
 }
 .submit-feedback-btn-cont {
   width: 100%;
@@ -65,14 +77,51 @@
   justify-content: left;
   padding: 0 10px;
   margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .submit-feedback-btn {
   width: 300px;
   background-color: #463632;
-  color: rgb(0, 0, 0);
+  font-size: 20px;
+  color: rgb(255, 255, 255);
   border: 0;
   outline: 0;
   height: 50px;
   cursor: pointer;
   box-shadow: 0 0 10px 1px #fff;
+}
+.submit-error {
+  color: red;
+  padding: 4px 0;
+}
+.submited {
+  color: green;
+  font-size: 20px;
+  margin: 10px;
+  font-style: italic;
+}
+
+@media screen and (max-width: 422px) {
+  .feedback-form {
+    width: 360px;
+  }
+}
+
+@media screen and (max-width: 365px) {
+  .feedback-form {
+    width: 340px;
+  }
+}
+@media screen and (max-width: 342px) {
+  .feedback-form {
+    width: 320px;
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .feedback-form {
+    width: 300px;
+  }
 }

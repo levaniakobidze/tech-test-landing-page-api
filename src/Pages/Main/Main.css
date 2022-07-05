@@ -12,7 +12,7 @@
 }
 
 .left-cont {
-  width: 700px;
+  width: 580px;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -42,6 +42,9 @@
   height: 50px;
   color: rgb(255, 255, 255);
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .right-cont {
@@ -56,4 +59,30 @@
   height: 100%;
   object-fit: contain;
   margin-top: 50px;
+}
+
+@media screen and (max-width: 1901px) {
+  .right-cont {
+    width: 400px;
+  }
+}
+@media screen and (max-width: 987px) {
+  .left-cont {
+    width: 500px;
+  }
+}
+@media screen and (max-width: 902px) {
+  .left-cont {
+    width: 450px;
+  }
+}
+@media screen and (max-width: 852px) {
+  .left-cont {
+    display: flex;
+    justify-content: flex-end;
+    height: 70vh;
+  }
+  .right-cont {
+    height: 50vh;
+  }
 }

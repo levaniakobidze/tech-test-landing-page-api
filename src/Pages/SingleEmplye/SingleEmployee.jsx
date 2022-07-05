@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 import { mainActions } from "../../Redux/Store";
 import "./SingleEmployee.css";
 import { useLocation } from "react-router";
+import Container from "../../Components/Container/Container";
 
 function SingleEmployee() {
   const [alfa, setAlfa] = useState(
@@ -42,28 +43,25 @@ function SingleEmployee() {
 
   return (
     <div className='single-employee'>
-      {singleEmployee && (
-        <div className='single-left-cont'>
-          <img src={require(`../../uploads/${imageName}`)} alt='' />
+      <Container className='single-employee-container'>
+        {singleEmployee && (
+          <div className='single-left-cont'>
+            <img src={require(`../../uploads/${imageName}`)} alt='' />
+          </div>
+        )}
+        <div className='single-center-cont'>
+          <h1 className='single-employee-name'>{name}</h1>
+          <p className='single-employee-position'>{description}</p>
+          <div className='single-employee-text'>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae iste
+            quis molestiae voluptas officiis itaque nostrum voluptate mollitia.
+          </div>
+          <span className='single-employee-likes'>{like}</span>
+          <button className='single-employee-like-btn' onClick={likeF}>
+            {likeActive ? "Unlike" : "Like"}
+          </button>
         </div>
-      )}
-      <div className='single-center-cont'>
-        <h1 className='single-employee-name'>{name}</h1>
-        <p className='single-employee-position'>{description}</p>
-        <div className='single-employee-text'>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae iste
-          quis molestiae voluptas officiis itaque nostrum voluptate mollitia.
-        </div>
-        <span className='single-employee-likes'>{like}</span>
-        <button className='single-employee-like-btn' onClick={likeF}>
-          {likeActive ? "Unlike" : "Like"}
-        </button>
-      </div>
-      <div className='single-right-cont'>
-        <div className='man-icon-cont'>
-          <img src={require("../../Assets/man.png")} alt='' />
-        </div>
-      </div>
+      </Container>
     </div>
   );
 }
